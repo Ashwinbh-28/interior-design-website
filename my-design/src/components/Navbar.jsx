@@ -36,7 +36,7 @@ const NavLinks = [
 const Navbar = () => {
     return (
     <>
-    <div className="container px-4 py-4">
+    <div className="container py-4">
         {/* Logo section */}
         <img src={Logo} alt="logo" className='w-10' />
         {/* Link section */}
