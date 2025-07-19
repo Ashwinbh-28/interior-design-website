@@ -10,13 +10,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px] gap-10">
           {/* Text section */}
           <div className="flex flex-col justify-center gap-7 md:pr-8 xl:pr-52 text-center md:text-left pt-20 md:pt-0 px-10">
-            <h1 className="text-4xl font-bold font-serif">
-              SKETCH LUXURY INTERIOR DESIGN
+            <h1 className="text-4xl font-bold font-serif uppercase">
+            Formed by Design
+            Defined by Feeling
             </h1>
-            <p className="text-sm md:text-base text-gray-500 leading-7"
+            <p className="text-sm md:text-base text-gray-500 leading-7 font-serif"
             >
-              Bring your dream to life with one-on-one design help & hand picked
-              products tailored to your style, space and budget.
+              At Linéa Haus, design is more than how it looks.
+We shape interiors that move you,
+and make daily living feel effortlessly refined.
             </p>
             <div className="space-x-4">
               <button
