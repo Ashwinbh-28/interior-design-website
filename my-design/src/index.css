@@ -3,29 +3,26 @@
 @layer utilities {
     .container {
       padding-left: 1rem;
+      padding-right: 1rem;
     }
-  
+    
     @media (min-width: 640px) {
       .container {
         padding-left: 2rem;
+        padding-right: 2rem;  
       }
     }
-  
     @media (min-width: 1024px) {
       .container {
         padding-left: 4rem;
+        padding-right: 4rem;
       }
     }
-  
+    
     @media (min-width: 1280px) {
       .container {
         padding-left: 5rem;
-      }
-    }
-  
-    @media (min-width: 1536px) {
-      .container {
-        padding-left: 6rem;
+        padding-right: 5rem;
       }
     }
   }

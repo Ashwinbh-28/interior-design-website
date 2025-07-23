@@ -53,7 +53,9 @@ const Navbar = () => {
         </div>
         {/* Button section */}
         <div>
-          <button className="primary-btn">Try For Free</button>
+          <button className="primary-btn">
+            <a href="#">Try For Free</a>
+          </button>
         </div>
       </div>
     </>

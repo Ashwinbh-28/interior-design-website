@@ -10,14 +10,14 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px] gap-10">
           {/* Text section */}
           <div className="flex flex-col justify-center gap-7 md:pr-8 xl:pr-52 text-center md:text-left pt-20 md:pt-0 px-10">
-            <h1 className="text-4xl font-bold font-serif uppercase">
+            <h1 className="text-3xl font-bold font-serif text-wrap uppercase">
             Formed by Design
             Defined by Feeling
             </h1>
             <p className="text-sm md:text-base text-gray-500 leading-7 font-serif"
             >
               At Linéa Haus, design is more than how it looks.
-We shape interiors that move you,
+We shape interiors that move you, 
 and make daily living feel effortlessly refined.
             </p>
             <div className="space-x-4">
@@ -35,7 +35,7 @@ and make daily living feel effortlessly refined.
                 // animate="animate"
                 className="primary-btn uppercase"
               >
-                Contact Us
+                <a href="/contact">Contact Us</a>
               </button>
             </div>
           </div>
