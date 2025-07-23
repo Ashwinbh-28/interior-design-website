@@ -4,7 +4,7 @@ import Hero from './components/HeroPage/Hero';
 
 const App = () => {
   return (
-    <main className='overflow-x-hidden'>
+    <main className='overflow-x-hidden mr-3'>
       <Navbar />
       <Hero />
     </main>

@@ -1,5 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo.png";
+import Hamburger from "hamburger-react";
+import Sidebar from "./Sidebar";
 // import { motion } from "framer-motion";
 
 const NavLinks = [
@@ -25,26 +27,22 @@ const NavLinks = [
   },
 ];
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false);
   return (
     <>
-      <div
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="container py-6 flex justify-between items-center"
-      >
+      <nav className="container py-6 flex justify-between items-center">
         {/* Logo section */}
         <div className="flex items-center gap-3">
           <img src={Logo} alt="logo" className="w-10" />
           <span className="text-2xl font-bold">Linéa Haus</span>
         </div>
         {/* Link section */}
-        <div className="hidden md:block !space-x-12">
+        <div className=" hidden lg:flex !space-x-12">
           {NavLinks.map((link) => {
             return (
               <a
                 href={link.link}
-                className="inline-block mx-4 text-lg font-semibold decoration-solid underline-offset-6 hover:underline"
+                className="flex mx-4 text-lg font-semibold decoration-solid underline-offset-6 hover:underline"
               >
                 {link.title}
               </a>
@@ -52,12 +50,20 @@ const Navbar = () => {
           })}
         </div>
         {/* Button section */}
-        <div>
-          <button className="primary-btn">
-            <a href="#">Try For Free</a>
-          </button>
+        <button className="primary-btn hidden lg:flex ">
+          <a href="#">Try For Free</a>
+        </button>
+        {/* Hamburger menu */}
+        <div
+          className="ham-menu block lg:hidden"
+          onClick={() => setOpen(!open)}
+        >
+          <Hamburger />
         </div>
-      </div>
+      </nav>
+
+      {/* Mobile sidebar menu */}
+      <Sidebar open={open} />
     </>
   );
 };
