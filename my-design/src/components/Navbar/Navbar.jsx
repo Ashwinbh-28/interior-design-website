@@ -29,42 +29,57 @@ const NavLinks = [
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   return (
-    <>
-      <nav className="container py-6 flex justify-between items-center">
-        {/* Logo section */}
-        <div className="flex items-center gap-3">
-          <img src={Logo} alt="logo" className="w-10" />
-          <span className="text-2xl font-bold">Linéa Haus</span>
-        </div>
-        {/* Link section */}
-        <div className=" hidden lg:flex !space-x-12">
-          {NavLinks.map((link) => {
-            return (
+    <nav className="container py-4 flex justify-between items-center m-2">
+    {/* Left Section: Logo + Hamburger (mobile) */}
+    <div className="flex items-center gap-3">
+    {/* Hamburger menu: only shows on small screens */}
+    <div className=" lg:hidden ">
+    <Hamburger toggled={open} toggle={setOpen} size={20} />
+    {open && (
+      <div className="absolute top-20 left-0 w-full z-50 bg-gray-50 shadow-lg rounded-b-3xl py-6">
+        <ul className="flex flex-col gap-4 items-center">
+          {NavLinks.map((link) => (
+            <li key={link.id}>
               <a
                 href={link.link}
-                className="flex mx-4 text-lg font-semibold decoration-solid underline-offset-6 hover:underline"
+                className="text-lg font-semibold decoration-solid underline-offset-4 hover:underline cursor-pointer"
+                onClick={() => setOpen(false)}
               >
                 {link.title}
               </a>
-            );
-          })}
-        </div>
-        {/* Button section */}
-        <button className="primary-btn hidden lg:flex ">
-          <a href="#">Try For Free</a>
-        </button>
-        {/* Hamburger menu */}
-        <div
-          className="ham-menu block lg:hidden"
-          onClick={() => setOpen(!open)}
-        >
-          <Hamburger />
-        </div>
-      </nav>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    </div>
+    <img
+      src={Logo}
+      alt="logo"
+      className="w-10 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
+      style={{ zIndex: 60 }}
+    />
+    <span className="text-2xl font-bold hidden md:flex">Linéa Haus</span>
+    </div>
 
-      {/* Mobile sidebar menu */}
-      <Sidebar open={open} />
-    </>
+    {/* Center Nav Links (hidden on small) */}
+    <div className="hidden lg:flex space-x-12">
+    {NavLinks.map((link) => (
+    <a
+    key={link.id}
+    href={link.link}
+    className="text-lg font-semibold hover:underline underline-offset-4"
+    >
+    {link.title}
+    </a>
+    ))}
+    </div>
+
+    {/* Right CTA Button (hidden on small) */}
+    <button className="primary-btn hidden lg:flex">
+    <a href="#">Try For Free</a>
+    </button>
+    </nav>
   );
 };
 
